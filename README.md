@@ -4,7 +4,7 @@ An agentic operating system for running a job search like a product.
 
 CareerOS is a lightweight framework built from Markdown files, source-of-truth tables, and scheduled review loops. The design bet is simple: for a single person making high-stakes career decisions, a version-controlled folder plus adversarial AI review can be more useful than a complex multi-agent app.
 
-I built the private version while running my own senior product management search. This public repo contains the architecture, prompts, and blank templates. It does not contain my personal data, employer data, interview notes, company research, or private evidence archive.
+A private version holds my own data. This public repo contains the architecture, prompts, and blank templates. It does not contain my personal data, employer data, interview notes, company research, or private evidence archive.
 
 ## Why This Exists
 
