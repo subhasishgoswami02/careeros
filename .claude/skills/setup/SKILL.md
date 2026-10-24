@@ -57,7 +57,7 @@ Show the filled file.
 - Show `scoring.yaml` weights as a table. Ask what matters more or less. Keep the total at 100.
   Their my-data copy only needs the keys they change; the rest comes from `config/`.
 - Walk through `rules.yaml` one rule at a time: what it does and why, in one plain sentence.
-  Say these are starting points from a real search, not laws. Ask keep, change or turn off.
+  Say these are starting points, not laws. Ask keep, change or turn off.
   Fill `priority_keywords_first.keywords` with their niche. Edit `big_brand_contact_only.brands` for their market.
   For the US or UK, suggest `close_on_day: 21`.
 

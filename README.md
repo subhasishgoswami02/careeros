@@ -4,7 +4,7 @@ A job-search kit you run with Claude. You set it up once with your own backgroun
 Then it helps you every day: which roles are worth your time, who to contact, what to send, how to
 prepare, and what's actually working.
 
-It grew out of a real job search, so the defaults are lessons learned the hard way. The examples lean
+It grew out of real job-search work, so the defaults are practical lessons, not theory. The examples lean
 product management, but the kit works for any office job: you set your own titles, industries, pay and rules.
 
 Everything about you stays in a private folder on your computer.
@@ -110,7 +110,7 @@ Details: **[docs/CUSTOMIZE.md](docs/CUSTOMIZE.md)**.
 
 ## The default rules, and why
 
-These are starting points from a real search, not laws. `/retro` checks each one against **your** results
+These are starting points, not laws. `/retro` checks each one against **your** results
 once you have about 30 applications, and tells you which to keep.
 
 | Rule (on by default) | Why |

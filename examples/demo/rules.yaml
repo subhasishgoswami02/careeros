@@ -4,7 +4,7 @@
 # score.py enforces: no_easy_apply, big_brand_contact_only, priority_keywords_first, ask_budget_on_first_call.
 # tracker.py enforces: follow_up_then_close. Claude applies the rest when running the skills.
 #
-# These defaults are lessons from a real job search, written as starting points, not laws.
+# These defaults are practical lessons, written as starting points, not laws.
 # Your market and role may differ: /retro re-checks each rule against YOUR outcomes and tells you
 # which to keep.
 
