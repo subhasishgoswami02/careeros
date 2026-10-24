@@ -1,5 +1,8 @@
 # Templates
 
+> **Design notes** from the original private system that this kit grew out of. They explain the thinking. The runnable kit is described in the [README](../../README.md); where they differ, the README, CLAUDE.md and `.claude/` win.
+
+
 Blank schemas for the core files. All examples are fictional.
 
 ## 1. Truth Engine

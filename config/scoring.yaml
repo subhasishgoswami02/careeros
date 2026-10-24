@@ -1,0 +1,56 @@
+# scoring.yaml
+# DEFAULTS. /setup copies this to my-data/scoring.yaml; edit that copy, skills read it first.
+# HOW A ROLE GETS SCORED. Used by /score and scripts/score.py.
+#
+# Read this first: the score measures FIT, not your chance of getting a reply.
+# Who you go through (referral, a named person, a portal) usually matters more than fit.
+# So: gates first, fit score second, route decides priority. See rules.yaml.
+
+# Each dimension gets a rating from 0 to 100 with a written rationale.
+# Points = weight x rating / 100. Weights must add up to 100.
+weights:
+  role_title_match: 15        # title vs profile.yaml roles (5=100, 4=80, 3=60, 2=40, 1=0)
+  jd_experience_match: 30     # JD responsibilities vs your experience library, read literally
+  domain_match: 12            # company domain vs profile.yaml domains
+  must_have_coverage: 10      # share of the JD's stated must-haves you can evidence
+  compensation: 8             # posted or estimated pay vs profile.yaml compensation
+  location: 8                 # vs profile.yaml locations
+  company_desirability: 7     # tier A=100, B=75, C=50, untiered=40
+  seniority_fit: 6            # stated experience band vs your years
+  growth: 4                   # does this move you toward where you want to be?
+
+bands:
+  apply: 75                   # 75+ = apply (with a route, see rules.yaml)
+  referral_only: 65           # 65-74 = only through a warm route
+  # below 65 = skip
+
+# Caps applied AFTER the weighted total. They stop a good title from hiding a real gap.
+caps:
+  # "none" = nothing in your experience library shows it, even indirectly.
+  # "partial" = adjacent or transferable evidence. "strong" = a library entry shows it directly.
+  missing_must_have:          # one stated must-have with no evidence: at most REFERRAL-ONLY
+    enabled: true
+    max_score: 70
+  two_or_more_missing_must_haves:   # two or more: SKIP unless you turn this off
+    enabled: true
+    max_score: 60
+# Unknown pay is never guessed: the compensation dimension is left out and the other weights scale up.
+
+# Hard disqualifiers: any hit = SKIP, whatever the score.
+hard_disqualifiers:
+  - "Location outside work_authorization with no sponsorship language (see profile.yaml international_rule)"
+  - "Posted pay below compensation.absolute_minimum (when below_minimum_policy is reject)"
+  - "Company in company_tiers.never"
+  - "Role matches role_filters.avoid"
+  - "No real job description (title only). Outcome is WATCH, not APPLY: get the JD first."
+
+# Seniority check, using candidate.years_experience
+seniority:
+  pass_if_band_floor_within_years_below: 2
+  down_level_if_band_ceiling_years_below: 3    # down-level = only through a named human, ask pay early
+  stretch_if_band_floor_years_above: 3         # stretch = only if your evidence carries it
+
+# Calibration: after this many resolved outcomes, /retro compares scores vs results
+calibration:
+  review_after_outcomes: 15
+  double_pass_if_disagree_by: 8   # score twice blind; if the two totals differ by more than this, score a third time

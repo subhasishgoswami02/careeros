@@ -1,5 +1,10 @@
 # Modules: The End-to-End Roadmap
 
+> **Design notes** from the original private system that this kit grew out of. They explain the thinking. The runnable kit is described in the [README](../../README.md); where they differ, the README, CLAUDE.md and `.claude/` win.
+
+
+> **What this kit runs:** M1 via `/score` + `/briefing`, M2 and M3 via `/tailor`, M7 via `/outreach`, M8 via `/prep` + `/debrief`, M9 via `/track` + `/retro`, and offers via `/offer`. M4 is partial (you submit). M5 (inbox) and M6 (dashboard) are not included. The Status column below is the original private system's.
+
 CareerOS started as a truth engine plus review gates. The full system covers the whole journey from "a job exists" to "offer decision," with the human approving every external action. Status reflects the private instance; this repo ships the designs.
 
 | # | Module | What it does | Status |

@@ -1,0 +1,103 @@
+# sources.yaml
+# DEFAULTS. /setup copies this to my-data/sources.yaml; edit that copy, skills read it first.
+# WHERE /briefing looks for new roles, in priority order.
+# Delete what you don't use, add what you do. Sources are read-only: the kit never
+# applies, messages or clicks "apply" anywhere.
+#
+# access:
+#   public  = open web page, no sign-in
+#   email   = job-alert emails in your inbox (needs a Gmail / Outlook connector)
+#   browser = needs you signed in, read through Claude in Chrome. Most job sites (LinkedIn,
+#             Naukri, IIMJobs, Instahyre) ban automated access to signed-in pages, even read-only,
+#             and can restrict your account. Prefer their alert EMAILS. Never schedule browser sources.
+#   manual  = you paste roles in
+
+sources:
+
+  - name: "Company careers pages for your tier A/B companies"
+    access: public
+    how: "For each company in profile.yaml company_tiers, open its careers page and filter by your roles."
+    enabled: true
+
+  - name: "LinkedIn job alerts (via email)"
+    access: email      # needs a Gmail or Outlook connector; /setup turns this off if you don't have one
+    how: >
+      Create 2-4 tight saved alerts in LinkedIn (boolean title query + location + seniority).
+      Read the alert emails, not the LinkedIn site: cheaper and no account risk.
+      Example query: ("Senior Software Engineer" OR "Staff Engineer") AND (backend OR platform)
+    search: "from:jobalerts-noreply@linkedin.com after:{last_run_date}"
+    enabled: true
+
+  - name: "Wellfound (alert emails)"
+    access: email
+    how: "Turn on job alerts in Wellfound, then read the emails. The site needs a login and blocks bots."
+    search: "from:wellfound.com after:{last_run_date}"
+    enabled: false
+
+  - name: "YC Work at a Startup (alert emails)"
+    access: email
+    how: "Needs a free YC account. Turn on its email digest and read that."
+    search: "from:workatastartup.com after:{last_run_date}"
+    enabled: false
+
+  - name: "Lenny's Job Board (product roles)"
+    access: public
+    url: "https://jobs.lennysnewsletter.com"
+    enabled: false
+
+  - name: "Hacker News: Who is Hiring (monthly thread)"
+    access: public
+    url: "https://news.ycombinator.com/submitted?id=whoishiring"
+    enabled: false
+
+  - name: "Community job sheets"
+    access: browser
+    how: >
+      Many PM / engineering communities keep a shared Google Sheet of openings.
+      Add the link you have access to. Track the last row you read so each run
+      only processes new rows: store it in my-data/source-checkpoints.md.
+      Copy only company, role and link. Sheets often hold posters' phone numbers: never copy those.
+    url: ""
+    enabled: false
+
+  # Region packs. Turn on the one that matches you.
+  - name: "India: Cutshort"
+    access: public
+    url: "https://cutshort.io/jobs"
+    enabled: false
+  - name: "India: Naukri (alert emails)"
+    access: email
+    how: "Create a saved search with alerts in Naukri, then read the emails."
+    search: "from:naukri.com after:{last_run_date}"
+    enabled: false
+  - name: "India: IIMJobs (management / MBA roles, alert emails)"
+    access: email
+    search: "from:iimjobs.com after:{last_run_date}"
+    enabled: false
+  - name: "India: Instahyre (alert emails)"
+    access: email
+    search: "from:instahyre.com after:{last_run_date}"
+    enabled: false
+  - name: "UK / Europe: Welcome to the Jungle (Otta)"
+    access: public
+    url: "https://www.welcometothejungle.com/en/jobs"
+    enabled: false
+  - name: "US: Built In"
+    access: public
+    url: "https://builtin.com/jobs"
+    enabled: false
+
+# Remember rules.yaml no_easy_apply: these are places to FIND roles.
+# You still apply on the company's own site and reach a named person.
+
+dedup:
+  # Before showing any role: `python3 scripts/tracker.py check --company X --role Y`,
+  # and skip anything already in my-data/scores/ from the last 30 days.
+  check: ["my-data/pipeline.json", "my-data/scores/", "same company + same title within 30 days"]
+
+limits:
+  max_roles_per_briefing: 8      # a short list you will act on beats a long one you won't
+  first_run_lookback_days: 7     # email sources with no checkpoint yet start this far back
+  careers_pages_every_days: 7    # check each company's careers page weekly, not daily
+  # Tip: many careers pages run on Greenhouse, Lever or Ashby, which publish a public job list
+  # (e.g. boards.greenhouse.io/<company>). Reading that is lighter than loading the full site.

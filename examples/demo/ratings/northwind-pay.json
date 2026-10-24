@@ -1,0 +1,63 @@
+{
+  "company": "Northwind Pay",
+  "role": "Lead PM, Merchant Checkout",
+  "location": "Pune (hybrid)",
+  "url": "https://careers.example.com/northwind-pay",
+  "jd_file": "examples/demo/jds/northwind-pay-lead-pm-checkout.md",
+  "route": "referral",
+  "priority_keyword_title": true,
+  "compensation_known": true,
+  "disqualifiers_hit": [],
+  "must_haves": [
+    {
+      "item": "payments / checkout",
+      "evidence": "strong"
+    },
+    {
+      "item": "A/B testing",
+      "evidence": "strong"
+    },
+    {
+      "item": "risk / fraud partnership",
+      "evidence": "partial"
+    }
+  ],
+  "dimensions": {
+    "role_title_match": {
+      "rating": 100,
+      "rationale": "Lead PM rated 5"
+    },
+    "jd_experience_match": {
+      "rating": 90,
+      "rationale": "checkout conversion + risk partnership map to Kestrel #1, #3"
+    },
+    "domain_match": {
+      "rating": 100,
+      "rationale": "Payments rated 5"
+    },
+    "must_have_coverage": {
+      "rating": 90,
+      "rationale": "3 of 3 evidenced, risk partnership partial"
+    },
+    "compensation": {
+      "rating": 90,
+      "rationale": "50-60 LPA spans ideal 55"
+    },
+    "location": {
+      "rating": 100,
+      "rationale": "Pune priority 5"
+    },
+    "company_desirability": {
+      "rating": 100,
+      "rationale": "tier A"
+    },
+    "seniority_fit": {
+      "rating": 100,
+      "rationale": "8+ band, 9 years"
+    },
+    "growth": {
+      "rating": 80,
+      "rationale": "step to Lead"
+    }
+  }
+}

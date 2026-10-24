@@ -1,0 +1,85 @@
+# FICTIONAL DEMO USER. Every name and company here is made up.
+meta:
+  last_updated: '2026-10-26'
+  setup_complete: true
+objective:
+  primary: maximize_interview_rate
+  notes: Fictional demo user. Wants a payments role within 3 months.
+candidate:
+  years_experience: 9
+  current_level: Senior PM
+  function: Product Management
+  current_location: Pune, India
+  work_authorization:
+  - India
+compensation:
+  currency: INR
+  unit: lakhs_per_annum
+  ideal: 55
+  comfortable: 48
+  absolute_minimum: 40
+  below_minimum_policy: ask_me
+  unknown_pay_policy: probe_on_first_call
+  market_notes: 'India: recruiters ask current and expected CTC first.'
+roles:
+  Senior Product Manager: 5
+  Lead Product Manager: 5
+  Product Manager: 4
+  Group Product Manager: 3
+  Director of Product: 2
+domains:
+  Payments: 5
+  Fintech: 5
+  B2B SaaS: 4
+  E-commerce: 3
+  Gaming: 1
+locations:
+  priority_5:
+  - Pune
+  - Remote India
+  priority_3:
+  - Hyderabad
+  - Mumbai
+  priority_1:
+  - Delhi NCR
+  international_rule: 'Consider roles outside your work_authorization countries only
+    if the posting states visa sponsorship or relocation support, or a recruiter confirms
+    it.
+
+    '
+company_size_preference:
+  prefer: []
+  avoid: []
+company_tiers:
+  tier_a:
+  - Northwind Pay
+  tier_b:
+  - Tallyworks
+  tier_c: []
+  never: []
+role_filters:
+  favor:
+  - payments
+  - merchant
+  - checkout
+  - platform
+  avoid:
+  - Gaming
+  - AdTech
+resume_variants:
+  Payments:
+    for: merchant / checkout / payments platform roles
+    file: my-data/resumes/payments.md
+  General PM:
+    for: everything else
+    file: my-data/resumes/general.md
+voice:
+  tone: direct, warm, short sentences
+  banned_words:
+  - synergy
+  - leverage
+  - passionate
+  - delve
+  banned_punctuation:
+  - em dash
+  language_notes: ''

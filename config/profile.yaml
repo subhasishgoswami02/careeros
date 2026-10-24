@@ -1,0 +1,82 @@
+# profile.yaml
+# WHAT YOU WANT. DEFAULT TEMPLATE: do not put your real details here.
+# /setup copies this to my-data/profile.yaml (git-ignored) and fills it by interviewing you.
+# Skills read my-data/profile.yaml first and fall back to this file.
+# Rating scale used below: 5 = ideal, 4 = strong, 3 = fine, 2 = only if exceptional, 1 = never.
+#
+# This file holds PREFERENCES. Facts about your career live only in
+# my-data/experience-library.md, which never leaves your computer.
+
+meta:
+  last_updated: "YYYY-MM-DD"
+  setup_complete: false        # /setup sets this to true at the end
+
+objective:
+  # Pick one primary goal. It changes how ties are broken.
+  # Options: maximize_interview_rate | maximize_compensation | career_switch | specific_company_set
+  primary: maximize_interview_rate
+  notes: "One or two lines on why. Example: need a role within 3 months."
+
+candidate:
+  years_experience: 0            # total relevant years, used for the seniority check
+  current_level: ""              # e.g. "Senior PM", "Lead Engineer", "Analyst"
+  function: ""                   # e.g. "Product Management", "Software Engineering", "Data Science"
+  current_location: ""           # city, country
+  work_authorization: []         # REQUIRED. Countries where you can work without sponsorship, e.g. ["India"]
+
+compensation:
+  currency: "INR"                # INR, USD, GBP, EUR...
+  unit: "lakhs_per_annum"        # lakhs_per_annum | thousands_per_annum | per_annum
+  ideal: 0                       # REQUIRED, all three
+  comfortable: 0
+  absolute_minimum: 0            # below this = reject (or ask first, see below)
+  market_notes: ""               # e.g. "India: answer current + expected CTC"; "US: ranges are posted"
+  below_minimum_policy: ask_me   # ask_me | reject
+  unknown_pay_policy: probe_on_first_call   # never guess a number when the posting has none
+
+# Titles you would take, rated 1-5. /setup fills this for your role family. Examples:
+#   Product:      "Senior Product Manager": 5, "Lead Product Manager": 5, "Product Manager": 4
+#   Engineering:  "Senior Software Engineer": 5, "Staff Engineer": 4, "Backend Engineer": 4
+#   Data:         "Senior Data Scientist": 5, "Analytics Manager": 4
+#   Design:       "Senior Product Designer": 5, "Lead Designer": 4
+roles: {}
+
+# Industries / domains, rated 1-5. Example: "B2B SaaS": 5, "Healthcare": 4, "Gaming": 1
+domains: {}
+
+locations:
+  priority_5: ["Remote (your country)", "Your city"]   # full points
+  priority_3: []                                         # fine
+  priority_1: []                                         # only if exceptional
+  international_rule: >
+    Consider roles outside your work_authorization countries only if the posting
+    states visa sponsorship or relocation support, or a recruiter confirms it.
+
+company_size_preference:
+  # Optional. Leave empty to ignore.
+  prefer: []        # e.g. ["mid-size 1k-30k employees", "Series B-D startups"]
+  avoid: []         # e.g. ["staffing agencies", "pre-seed"]
+
+# Companies you care about. Tiers feed the "company desirability" dimension.
+company_tiers:
+  tier_a: []        # dream companies
+  tier_b: []        # strong targets with real domain overlap
+  tier_c: []        # good backups
+  never: []         # do not surface at all
+
+role_filters:
+  favor: []         # themes that make a role more interesting, e.g. ["platform", "payments", "AI"]
+  avoid: []         # themes that make a role a reject, e.g. ["AdTech", "pure sales"]
+
+# Resume variants you keep. /tailor routes each JD to one of these before deciding
+# whether a new tailored file is worth building.
+resume_variants:
+  # "Name": {for: "what kind of role", file: "my-data/resumes/<name>.md"}
+  "Master": {for: "default for most roles", file: "my-data/resumes/master.md"}
+
+voice:
+  # How your outgoing messages should sound. /outreach and the stylist gate read this.
+  tone: "direct, warm, no corporate filler"
+  banned_words: ["synergy", "leverage", "passionate", "delve"]
+  banned_punctuation: []     # e.g. ["em dash"]
+  language_notes: ""

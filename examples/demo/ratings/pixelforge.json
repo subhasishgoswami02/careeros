@@ -1,0 +1,57 @@
+{
+  "company": "Pixelforge Games",
+  "role": "PM, In-game Monetisation",
+  "location": "Pune",
+  "url": "https://careers.example.com/pixelforge",
+  "jd_file": "examples/demo/jds/pixelforge-pm-monetisation.md",
+  "route": "job_board",
+  "priority_keyword_title": false,
+  "compensation_known": true,
+  "disqualifiers_hit": [
+    "Role matches role_filters.avoid (Gaming)"
+  ],
+  "must_haves": [
+    {
+      "item": "gaming",
+      "evidence": "none"
+    }
+  ],
+  "dimensions": {
+    "role_title_match": {
+      "rating": 80,
+      "rationale": "PM rated 4"
+    },
+    "jd_experience_match": {
+      "rating": 50,
+      "rationale": "payments yes, gaming no"
+    },
+    "domain_match": {
+      "rating": 0,
+      "rationale": "Gaming rated 1"
+    },
+    "must_have_coverage": {
+      "rating": 0,
+      "rationale": "gaming missing"
+    },
+    "compensation": {
+      "rating": 50,
+      "rationale": "at floor"
+    },
+    "location": {
+      "rating": 100,
+      "rationale": "Pune"
+    },
+    "company_desirability": {
+      "rating": 40,
+      "rationale": "untiered"
+    },
+    "seniority_fit": {
+      "rating": 40,
+      "rationale": "down-level"
+    },
+    "growth": {
+      "rating": 20,
+      "rationale": "off-path"
+    }
+  }
+}

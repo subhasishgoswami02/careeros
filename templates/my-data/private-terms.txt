@@ -1,0 +1,3 @@
+# One term per line. The privacy guard blocks any commit that contains one of these.
+# Add: your full name, every email, phone number, current/recent employer names,
+# salary figures as you write them (e.g. "45 LPA"), internal project names.

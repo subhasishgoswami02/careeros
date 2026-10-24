@@ -1,5 +1,8 @@
 # The System in One Diagram
 
+> **Design notes** from the original private system that this kit grew out of. They explain the thinking. The runnable kit is described in the [README](../../README.md); where they differ, the README, CLAUDE.md and `.claude/` win.
+
+
 CareerOS has the same three layers as any decent platform: a source of truth, deterministic gates, and scheduled workers. The human sits at the only decision point that matters.
 
 ```mermaid
@@ -24,4 +27,4 @@ Three properties fall out of this shape:
 
 **Writing has a release gate too.** Anything published runs through the voice standard and an AI-detection pass, the way code runs through CI.
 
-See [CONSTITUTION.md](CONSTITUTION.md) for the laws, [TEMPLATES.md](TEMPLATES.md) for the gate prompts, and [MODULES.md](MODULES.md) for the roadmap.
+See [constitution.md](constitution.md) for the laws, [gates.md](gates.md) for the gate prompts, and [modules.md](modules.md) for the roadmap.

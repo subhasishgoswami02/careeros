@@ -1,0 +1,55 @@
+{
+  "company": "Globex",
+  "role": "Senior PM, Payments Platform",
+  "location": "Hyderabad",
+  "url": "https://careers.example.com/globex",
+  "jd_file": "examples/demo/jds/globex-senior-pm-payments.md",
+  "route": "company_portal",
+  "priority_keyword_title": true,
+  "compensation_known": true,
+  "disqualifiers_hit": [],
+  "must_haves": [
+    {
+      "item": "payments platform",
+      "evidence": "partial"
+    }
+  ],
+  "dimensions": {
+    "role_title_match": {
+      "rating": 100,
+      "rationale": "Senior PM"
+    },
+    "jd_experience_match": {
+      "rating": 70,
+      "rationale": "merchant-facing, not internal platform"
+    },
+    "domain_match": {
+      "rating": 100,
+      "rationale": "Payments"
+    },
+    "must_have_coverage": {
+      "rating": 70,
+      "rationale": "platform reliability partial"
+    },
+    "compensation": {
+      "rating": 100,
+      "rationale": "above ideal"
+    },
+    "location": {
+      "rating": 60,
+      "rationale": "Hyderabad priority 3"
+    },
+    "company_desirability": {
+      "rating": 40,
+      "rationale": "untiered"
+    },
+    "seniority_fit": {
+      "rating": 100,
+      "rationale": "7+ band"
+    },
+    "growth": {
+      "rating": 80,
+      "rationale": "brand"
+    }
+  }
+}

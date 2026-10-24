@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/score.py *)",
+      "Bash(python3 scripts/tracker.py *)",
+      "Bash(python3 scripts/privacy_guard.py *)",
+      "Edit(my-data/**)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Bash(git add -f *)"
+    ]
+  }
+}
